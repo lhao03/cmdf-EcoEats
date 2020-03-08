@@ -15,10 +15,14 @@ public class FoodEco {
         foodDate.put("pork", 0.1*7);
         foodDate.put("egg", 4.5*0.1);
         foodDate.put("rice", 4*0.2);
+        foodDate.put("spaghetti",2.8*0.2);
+        foodDate.put("beans",2.0*0.4);
+        foodDate.put("salad",0.2*0.1);
+
         double sum =0.0;
         for(String i :food ){
-            if(foodDate.containsKey(i)){
-                sum+= foodDate.get(i);
+            if(foodDate.containsKey(removeS(i.toLowerCase()))){
+                return foodDate.get(i);
             }
         }
         return sum;
@@ -33,13 +37,16 @@ public class FoodEco {
         waterMap.put("coffee", 140);
         waterMap.put("pork", 598);
         waterMap.put("tomato", 10);
-        waterMap.put("eggs", 196);
+        waterMap.put("egg", 196);
         waterMap.put("rice", 499);
+        waterMap.put("spaghetti",370);
+        waterMap.put("bean",2200);
+        waterMap.put("salad",6);
 
         int sum = 0;
         for (String item : food) {
-            if (waterMap.containsKey(item)) {
-                sum += waterMap.get(item);
+            if (waterMap.containsKey(removeS(item.toLowerCase()))) {
+                return Integer.toString(waterMap.get(item));
             }
         }
 
@@ -54,4 +61,12 @@ public class FoodEco {
         double km = Math.round(emission * 8.9*10)/10.0;
         return Double.toString(km);
     }
+
+    static String removeS(String food){
+        if(food.endsWith("s")){
+            food = food.substring(0,food.length()-1);
+        }
+        return food;
+    }
+
 }

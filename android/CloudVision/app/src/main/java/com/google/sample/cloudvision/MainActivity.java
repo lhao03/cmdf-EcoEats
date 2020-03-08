@@ -82,12 +82,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        double emission = FoodEco.getEmission(new String[]{"beef", "pork","jam"});
-        String water = FoodEco.getWater(new String[] {"beef", "pork","jam"});
-        String trees = FoodEco.getTrees(emission);
-        String km = FoodEco.getKMDriven(emission);
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
