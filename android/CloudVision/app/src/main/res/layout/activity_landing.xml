@@ -33,7 +33,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/cameraButton"
         android:layout_width="wrap_content"
         android:layout_height="156dp"
         android:adjustViewBounds="true"

@@ -1,65 +1,43 @@
 package com.google.sample.cloudvision;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 public class FoodEco {
+    private static HashSet<Food> foodList;
 
-    static double getEmission(String[] food){
-        Map<String,Double>  foodDate = new HashMap<>();
-        foodDate.put("beef", 6.0);
-        foodDate.put("cheese", 21*0.05);
-        foodDate.put("chocolate", 19*0.2);
-        foodDate.put("tomato", 1.4*0.06);
-        foodDate.put("coffee", 17*0.07);
-        foodDate.put("pork", 0.1*7);
-        foodDate.put("egg", 4.5*0.1);
-        foodDate.put("rice", 4*0.2);
-        foodDate.put("spaghetti",2.8*0.2);
-        foodDate.put("beans",2.0*0.4);
-        foodDate.put("salad",0.2*0.1);
+    public FoodEco() {
+        foodList = new HashSet<>();
+        foodList.add(new Food("beef", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("cheese", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("chocolate", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("tomato", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("coffee", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("pork", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("egg", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("rice", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("spaghetti", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("beans", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+        foodList.add(new Food("salad", 6.0,1541,getTrees(6.0), getKMDriven(6.0)));
+    }
 
-        double sum =0.0;
-        for(String i :food ){
-            if(foodDate.containsKey(removeS(i.toLowerCase()))){
-                return foodDate.get(i);
+    public Food returnFood(ArrayList<String> parse) {
+        for (String string : parse) {
+            for (Food food:foodList) {
+                if (food.getName().toLowerCase().trim().contains(string.toLowerCase().trim())) {
+                    return food;
+                }
             }
         }
-        return sum;
+        return new Food("food",0,0,0,0);
     }
 
-    static String getWater(String[] food) {
-        Map<String, Integer> waterMap = new HashMap<>();
-
-        waterMap.put("beef", 1541);
-        waterMap.put("cheese", 159);
-        waterMap.put("chocolate", 3439);
-        waterMap.put("coffee", 140);
-        waterMap.put("pork", 598);
-        waterMap.put("tomato", 10);
-        waterMap.put("egg", 196);
-        waterMap.put("rice", 499);
-        waterMap.put("spaghetti",370);
-        waterMap.put("bean",2200);
-        waterMap.put("salad",6);
-
-        int sum = 0;
-        for (String item : food) {
-            if (waterMap.containsKey(removeS(item.toLowerCase()))) {
-                return Integer.toString(waterMap.get(item));
-            }
-        }
-
-        return Integer.toString(sum);
-    }
-    static String getTrees(double emission){
-        double trees = Math.round(emission/20*10)/10.0;
-        return Double.toString(trees);
+    private static double getTrees(double emission){
+        return Math.round(emission/20*10)/10.0;
     }
 
-    static String getKMDriven(Double emission){
-        double km = Math.round(emission * 8.9*10)/10.0;
-        return Double.toString(km);
+    private static double getKMDriven(double emission){
+        return Math.round(emission * 8.9*10)/10.0;
     }
 
     static String removeS(String food){
@@ -69,4 +47,40 @@ public class FoodEco {
         return food;
     }
 
+}
+
+class Food {
+    private String name;
+    private double emission;
+    private double water;
+    private double getTrees;
+    private double km;
+
+    public Food(String name, double emission, double water, double getTrees, double km) {
+        this.name = name;
+        this.emission = emission;
+        this.water = water;
+        this.getTrees = getTrees;
+        this.km = km;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getEmission() {
+        return emission;
+    }
+
+    public double getWater() {
+        return water;
+    }
+
+    public double getGetTrees() {
+        return getTrees;
+    }
+
+    public double getKm() {
+        return km;
+    }
 }

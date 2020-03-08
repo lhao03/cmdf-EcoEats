@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
     tools:context=".InitialActivity">
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/splashoutline" />
+        android:visibility="visible"
+        android:src="@drawable/splashoutline" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -20,5 +20,5 @@
         android:layout_gravity="center"
         android:gravity="center"
 
-        app:srcCompat="@drawable/logotext" />
+        android:src="@drawable/logotext" />
 </FrameLayout>
