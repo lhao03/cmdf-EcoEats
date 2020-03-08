@@ -284,9 +284,9 @@ public class MainActivity extends AppCompatActivity {
                 FoodEco foodEco = new FoodEco();
                 Food food = foodEco.returnFood(convertResponseToString(response));
                 System.out.println(response.toPrettyString());
-                Trees = food.getGetTrees() + "trees";
-                Water  = food.getWater() + "L";
-                Km  = food.getKm() + "km";
+                Trees = food.getGetTrees() + " trees";
+                Water  = food.getWater() +  "L";
+                Km  = food.getKm() + " km";
                 Intent mainIntent = new Intent(com.google.sample.cloudvision.MainActivity.this, FinalActivity.class);
                 com.google.sample.cloudvision.MainActivity.this.startActivity(mainIntent);
                 com.google.sample.cloudvision.MainActivity.this.finish();
