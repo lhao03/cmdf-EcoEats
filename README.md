@@ -19,4 +19,4 @@ We learned how to build my own android app! I was also able to witness the proce
 I really wanted to use Firebase in this app. While I connected to firebase, our team were all new hackers (besides one teammate, myself) and I had went in over my head. Thus the next logical step would be to itegrate Firebase into our app so we can introduce features such as user authentication, personal statistic tracking and meal comparison. 
 
 ## How to check it out yourself?
-I had to delete the key for the Google Cloud APIs to work, however in the future I plan on continuing to develop this app using firebase to leverage the ML kit i had hoped to use at the hackathon. In the mean time hold tight! 
+I had to delete the key for the Google Cloud API (due to security), however in the future I plan on continuing to develop this app using firebase to leverage the ML kit i had hoped to use at the hackathon. In the mean time hold tight! 
