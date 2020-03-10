@@ -1,7 +1,9 @@
 # 🌱 cmdf-EcoEats: Submission for cmd-f 2020
 ## The problem 
+Climate change is a problem effecting everyone. Often we are told that small changes can create a large impact, yet small changes are usually unnoticeable which can be discourging. 
 
 ## Our solution 
+EcoEats allows users to take a picture of their food and see the impact that the food production has on the environment. The water usage and the CO2 emissions of the food are shown to the user. The CO2 emissions are displayed to the user in terms of trees required to be planted and kilometres driven in a car so that the user can see their impact in a quantifiable and intuitive way.   
 
 ## How we built it
 We used android studio to built an app in Java. We were able to connec to the phone's camera to directly send a photo to Google's Cloud Vision API, which we also connected to the app. Figma was used to wireframe and think out our UI, and finally we used xml to connect the backend of the app with the front end. 
