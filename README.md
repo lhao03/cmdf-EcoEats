@@ -1,4 +1,4 @@
-# 🌱 cmdf-EcoEats: Submission for cmd-f 2020
+# 🌱 EcoEats: Submission for cmd-f 2020
 ## The problem 
 Climate change is a problem effecting everyone. Often we are told that small changes can create a large impact, yet small changes are usually unnoticeable which can be discourging. 
 
